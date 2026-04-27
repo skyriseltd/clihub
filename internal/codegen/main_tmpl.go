@@ -1355,7 +1355,7 @@ func openDefaultBrowser(url string) {
 	case "linux":
 		exec.Command("xdg-open", url).Start()
 	case "windows":
-		exec.Command("cmd", "/c", "start", "", url).Start()
+		exec.Command("rundll32", "url.dll,FileProtocolHandler", url).Start()
 	}
 }
 {{- end}}
